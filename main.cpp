@@ -5,6 +5,7 @@ using namespace std;
 
 int main(){
     Laboratorio lab;//En esta instancia, se crea nuestro vector de computadoras
+
     string opc;
 
     while(true){
@@ -17,6 +18,8 @@ int main(){
         cout<<"6. Inicializar"<<endl;
         cout<<"7. Eliminar"<<endl;   
         cout<<"8. Ordenar"<<endl;   
+        cout<<"9. Eliminar ultimo"<<endl;
+        cout<<"10. Buscar"<<endl;
         cout<<"0. Salir"<<endl<<endl; 
 
         cout<<"Digita una opcion: ";
@@ -106,6 +109,35 @@ int main(){
             //En la clase computadora se sobrecargo el operador < para poder hacer el ordenamiento usando el metodo sort()
             lab.ordenar();
         }
+
+        else if(opc == "9"){
+            cout<<"\t\t\tELIMINANDO ULTIMO ELEMENTO\n\n";
+            if(lab.size() <= 0){
+                cout<<"\nEl vector esta vacio"<<endl;
+            }
+            else{
+                lab.eliminar_ultimo();
+            }
+            
+        }
+
+        else if(opc == "10"){
+            cout<<"\t\t\tBUSCAR UNA COMPUTADORA\n\n";
+            Computadora compu;
+            cin>>compu;
+
+            cin.ignore();
+
+            Computadora *ptr = lab.buscar(compu);
+
+            if (ptr == nullptr){
+                cout<<"\n\nNo se encontro"<<endl;
+            }
+            else{
+                cout<<endl<<*ptr<<endl;//Se hace la referenciacion para que pueda imprimir la computadora
+            }
+        }
+
         else if(opc == "0"){
             break;
         }

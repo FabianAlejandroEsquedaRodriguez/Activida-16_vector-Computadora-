@@ -27,6 +27,8 @@ public:
     void inicializar(const Computadora &c, size_t n);
     void eliminar(size_t pos);//Eliminar una posicion valida
     void ordenar();
+    Computadora* buscar(const Computadora &c);//Va a retornar un puntero de la posicion del vector donde esta el elemento que queremos buscar
+    void eliminar_ultimo();
 
     friend Laboratorio & operator << (Laboratorio &l, const Computadora &c){
 

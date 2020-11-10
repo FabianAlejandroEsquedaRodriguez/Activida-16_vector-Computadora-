@@ -128,3 +128,21 @@ void Laboratorio::eliminar(size_t pos){
 void Laboratorio::ordenar(){
     sort(computadoras.begin(), computadoras.end());//Ordenar desde el inicio del vector hasta el final del mismo
 }
+
+Computadora* Laboratorio::buscar(const Computadora &c){
+    //vector<Computadora>::iterator = auto it
+    auto it = find(computadoras.begin(), computadoras.end(), c);//Recorre todo el vector y busca la computadora c
+
+    if (it == computadoras.end()){//Si el iterador esta apuntando al final del vector
+        return nullptr;
+    }
+    else{
+        //Accede a la posicion y con & quiero que me regrese la direccion de memororia donde esta esa computadora
+        return &(*it);//Vamos a acceder al elemento referenciando a un puntero
+    }
+}
+
+void Laboratorio::eliminar_ultimo(){
+        computadoras.pop_back();
+    
+}
