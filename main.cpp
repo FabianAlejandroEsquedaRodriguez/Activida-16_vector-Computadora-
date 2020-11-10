@@ -14,7 +14,9 @@ int main(){
         cout<<"3. Respaldar"<<endl;    
         cout<<"4. Recuperar"<<endl;    
         cout<<"5. Insertar"<<endl; 
-        cout<<"6. Inicializar"<<endl;   
+        cout<<"6. Inicializar"<<endl;
+        cout<<"7. Eliminar"<<endl;   
+        cout<<"8. Ordenar"<<endl;   
         cout<<"0. Salir"<<endl<<endl; 
 
         cout<<"Digita una opcion: ";
@@ -83,6 +85,27 @@ int main(){
             lab.inicializar(compu, n);
         }
 
+        else if(opc == "7"){
+            size_t pos;
+            cout<<"\t\t\tELIMINAR UNA COMPUTADORA\n\n\n";
+
+            cout<<"Digita una posicion a eliminar:";
+            cin>>pos;
+            cin.ignore();
+
+            if(pos >= lab.size()){
+                cout<<endl<<"Posicion no valida";
+            }
+            else{
+                lab.eliminar(pos);
+            }
+        }
+
+        else if(opc == "8"){
+            cout<<"\t\t\tORDENANDO EL VECTOR DE COMPUTADORAS\n\n";
+            //En la clase computadora se sobrecargo el operador < para poder hacer el ordenamiento usando el metodo sort()
+            lab.ordenar();
+        }
         else if(opc == "0"){
             break;
         }

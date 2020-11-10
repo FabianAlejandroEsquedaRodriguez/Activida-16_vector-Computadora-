@@ -25,6 +25,8 @@ public:
     void insertar(const Computadora &c, size_t pos);//Insertar en una posicion valida
     size_t size();
     void inicializar(const Computadora &c, size_t n);
+    void eliminar(size_t pos);//Eliminar una posicion valida
+    void ordenar();
 
     friend Laboratorio & operator << (Laboratorio &l, const Computadora &c){
 

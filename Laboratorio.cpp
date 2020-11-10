@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+#include <algorithm>
+
 #include "Laboratorio.h"
 
 using namespace std;
@@ -116,4 +118,13 @@ size_t Laboratorio::size(){
 void Laboratorio::inicializar(const Computadora &c, size_t n){
     //Ahora nuestro arreglo de computadoras va a ser un vector de computadoras, repetidas n veces
     computadoras = vector<Computadora>(n, c);
+}
+
+void Laboratorio::eliminar(size_t pos){
+    //Se va a eliminar del arreglo de computadoras la posicion que le mandemos 
+    computadoras.erase(computadoras.begin()+pos);
+}
+
+void Laboratorio::ordenar(){
+    sort(computadoras.begin(), computadoras.end());//Ordenar desde el inicio del vector hasta el final del mismo
 }
