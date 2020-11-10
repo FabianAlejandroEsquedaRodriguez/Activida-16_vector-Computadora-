@@ -22,6 +22,10 @@ public:
     void respaldar();//IMPRIME LOS ATRIBUTOS LINEA POR LINEA
     void recuperar(); 
 
+    void insertar(const Computadora &c, size_t pos);//Insertar en una posicion valida
+    size_t size();
+    void inicializar(const Computadora &c, size_t n);
+
     friend Laboratorio & operator << (Laboratorio &l, const Computadora &c){
 
         l.agregarComputadora(c);//Llamamos a la funcion y mandamos una computadora

@@ -102,3 +102,18 @@ void Laboratorio::recuperar(){
     }
     archivo.close();
 }
+
+void Laboratorio::insertar(const Computadora &c, size_t pos){
+    //usar el metodo insert y se va a insertar una computadora 
+    //desde la posicion inicial mas la posicion que le mandamos
+    computadoras.insert(computadoras.begin()+pos, c);
+}
+
+size_t Laboratorio::size(){
+    return computadoras.size();//Nos retorna la cantidad de elementos que tiene el vector de computadoras
+}
+
+void Laboratorio::inicializar(const Computadora &c, size_t n){
+    //Ahora nuestro arreglo de computadoras va a ser un vector de computadoras, repetidas n veces
+    computadoras = vector<Computadora>(n, c);
+}
